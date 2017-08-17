@@ -1,5 +1,7 @@
 =========
-
+## FGL: Angepasstes Projekt, Ort für Erweiterungen und TryOuts mit Hibernate Criteria API und weiteres.
+        Momentan an MySQL angebunden.
+      
 ## Spring with Hibernate 4 Example Project
 
 ### Relevant Articles: 
