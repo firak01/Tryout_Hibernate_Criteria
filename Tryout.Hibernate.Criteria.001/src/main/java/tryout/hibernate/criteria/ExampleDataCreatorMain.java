@@ -19,8 +19,9 @@ public class ExampleDataCreatorMain {
 		
 		//Nun wieder neu befüllen....
 		ExampleDataCollectionCreator objCollectionCreator = new ExampleDataCollectionCreator();
-		objCollectionCreator.createObects();
+		objCollectionCreator.createObjects();
 		
+		System.out.println("Fertig");
 	}
 
 }
