@@ -14,7 +14,7 @@ import com.baeldung.hibernate.criteria.view.ApplicationView;
 
 public class HibernateCriteriaIntegrationTest {
 
-    final private ApplicationView av = new ApplicationView();
+    final private ApplicationView av = new ApplicationView();//FGL: In dieser Klasse werden dann tatsächlih Methoden der Criteria API verwendet.
 
     @Test
     public void testPerformanceOfCriteria() {

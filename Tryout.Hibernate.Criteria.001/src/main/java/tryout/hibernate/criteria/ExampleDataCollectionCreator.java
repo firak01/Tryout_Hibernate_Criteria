@@ -8,10 +8,16 @@ import org.hibernate.Session;
 import com.baeldung.hibernate.criteria.model.Item;
 import com.baeldung.hibernate.criteria.util.HibernateUtil;
 
-public class ExampleDataCollectionCreator {
+public class ExampleDataCollectionCreator extends ExampleBasic {
 	public ExampleDataCollectionCreator() {		
 	}
 	
+	
+	public ExampleDataCollectionCreator(Session session) {
+		super(session);
+	}
+
+
 	public static List<Item> provideData(){
 		ArrayList<Item> listReturn = new  ArrayList<Item>();
 		
@@ -93,7 +99,7 @@ public class ExampleDataCollectionCreator {
 		//session.getTransaction().begin();
 		
 		int iCounter=0;
-		ExampleDataCreator objCreator = new ExampleDataCreator();
+		ExampleDataCreator objCreator = new ExampleDataCreator(this.getSession());
 		for(Item objItem : listItem2create) {
 			objCreator.createObject(objItem);
 			iCounter++;

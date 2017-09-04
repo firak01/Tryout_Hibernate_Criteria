@@ -6,12 +6,15 @@ import org.hibernate.Transaction;
 import com.baeldung.hibernate.criteria.model.Item;
 import com.baeldung.hibernate.criteria.util.HibernateUtil;
 
-public class ExampleDataCreator {
+public class ExampleDataCreator extends ExampleBasic{
 	public ExampleDataCreator() {
 		
 	}
+	public ExampleDataCreator(Session session) {
+		super(session);
+	}
 	public void createObject(Object object) {
-		final Session session = HibernateUtil.getHibernateSession();
+		final Session session = this.getSession(); //HibernateUtil.getHibernateSession();
 				
 		Transaction tx = session.beginTransaction();
 		Item objItem = (Item) object;
@@ -20,7 +23,7 @@ public class ExampleDataCreator {
 		session.flush();
 		
 		tx.commit();	//Ohne Transaktion (die auch begonnen werden muss, s.o., wird nix persistiert.
-		session.close();
+		//session.close();
 		
 	}
 }
